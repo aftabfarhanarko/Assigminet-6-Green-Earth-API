@@ -79,20 +79,20 @@
     <main class="bg-[#f0fdf4]">
 
         <!-- About the Campaign -->
-        <section class=" w-7/12 mx-auto py-10">
+        <section class=" max-w-[1150px] px-4 mx-auto py-10">
             <h2 class="text-center mb-10 text-4xl font-semibold">About the Campaign</h2>
             <div class="flex flex-col md:flex-row gap-10">
                 <img class="w-[500px]  shadow-md rounded-lg" src="./assets/about.png" alt="">
                 <div class="flex justify-center items-center">
                     <div>
-                        <p class="text-[#2c394c]">Green Earth is a global tree plantation initiative dedicated to
+                        <p class="text-[#2c394c] text-xl">Green Earth is a global tree plantation initiative dedicated to
                             fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By
                             joining our campaign, you help restore forests, create habitats for wildlife, and combat
                             global warming.</p>
-                        <ul class="text-[#2c394c] mt-5">
-                            <li>Restoration of natural habitats</li>
-                            <li>Improvement of air quality</li>
-                            <li>Support for local communities</li>
+                        <ul class="text-[#2c394c] mt-3 font-medium px-3">
+                            <li>1.Restoration of natural habitats</li>
+                            <li>2.Improvement of air quality</li>
+                            <li>3.Support for local communities</li>
                         </ul>
                     </div>
                 </div>
@@ -112,21 +112,55 @@
                     <div class=" text-center w-full py-5 bg-white rounded-md  shadow-md
                      transition-all duration-300 ease-in-out  hover:bg-[#B9F8CE] hover:scale-105">
                         <h1 class="text-2xl text-[#15803d] font-bold">120+</h1>
-                        <p class="text-[14px] font-medium mt-2" >Communities Involved</p>
+                        <p class="text-[14px] font-medium mt-2">Communities Involved</p>
                     </div>
                     <div class=" text-center w-full py-5 bg-white rounded-md  shadow-md
                      transition-all duration-300 ease-in-out  hover:bg-[#B9F8CE] hover:scale-105">
                         <h1 class="text-2xl text-[#15803d] font-bold">30+</h1>
                         <p class="text-[14px] font-medium mt-2">Countries Reached</p>
                     </div>
-                    
 
-                    
+
+
                 </div>
             </div>
         </section>
 
+
+
     </main>
+
+    <footer class="bg-[#166534] ">
+        <div class=" py-14">
+            <h2 class="text-2xl text-white font-semibold text-center mb-4">Plant a Tree Today</h2>
+             <div class="w-[450px] mx-auto   p-6 space-y-4 rounded-md bg-[#15803D]">
+                <input type="text" placeholder="Enter Your Name" class="input w-full" /><br>
+            <label class="input validator w-full">
+                <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
+                        stroke="currentColor">
+                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                    </g>
+                </svg>
+                <input type="email" placeholder="Enter Your Valid Email" required />
+            </label>
+            <label>
+                <select class="select validator w-full" required>
+                    <option>Number of Tree </option>
+                    <option>1 Tree - $5</option>
+                    <option>5 Tree - $25</option>
+                    <option>10 Tree - $50</option>
+                </select>               
+            </label>
+             <button class=" px-3 py-2 w-full mx-auto mt-3   rounded-full bg-yellow-400 text-[#15803d] font-semibold">Donate Now</button>
+             </div>
+        </div>
+
+        <div class="bg-[#14532D]">
+            <h3 class="text-center py-3 text-[19px] text-white font-medium">© 2025 Green Earth. All Rights Reserved.</h3>
+        </div>
+    </footer>
 </body>
 
 </html>

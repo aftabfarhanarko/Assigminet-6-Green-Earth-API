@@ -14,7 +14,8 @@
 <body class="poppins-thin">
 
     <header>
-        <nav class="bg-[#15803d]  fixed w-full">
+        <!-- fixed w-full -->
+        <nav class="bg-[#15803d]  ">
             <div class="navbar bg-base-100  w-11/12 mx-auto bg-[#15803d]">
                 <div class="navbar-start">
                     <div class="dropdown">
@@ -36,24 +37,44 @@
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="gap-7 text-white font-semibold menu-horizontal px-1">
-                        <li><a>About</a></li>
-                        <li><a>Gallery</a> </li>
-                        <li><a>Plant a Tree</a></li>
+                        <li class="cursor-pointer"><a>About</a></li>
+                        <li class="cursor-pointer"><a>Gallery</a> </li>
+                        <li class="cursor-pointer"><a>Plant a Tree</a></li>
                     </ul>
                 </div>
                 <div class="navbar-end">
-                    <a class="border-1 px-4 py-2 rounded-full bg-yellow-400 text-[#15803d] font-semibold">Plant a
-                        Tree</a>
+                    <p class=" px-4 py-2 rounded-full bg-yellow-400 text-[#15803d] font-semibold">Plant a
+                        Tree</p>
                 </div>
             </div>
         </nav>
-    </header>
+        <!-- Banner Sections -->
+         <section class="grid grid-cols-3 bg-[#cff0dc] gap-10">
+            <div>
+                <img src="./assets/hero-leaf1.png" alt="">
+            </div>
 
-    <main >
+            <div class="text-center flex justify-center items-center">
+                <div class="justify-center items-center space-y-5 ">
+                    <h1 class="text-5xl font-semibold ">Plant a Tree, Grow a Future</h1>
+                    <p class="text-[#1f2937] text-[18px]">Join our mission to plant 1 million trees and make the Earth greener for future
+                        generations.</p>
+                        <p class=" px-3 py-2 w-[150px] mx-auto   rounded-full bg-yellow-400 text-[#15803d] font-semibold">Get Imvolved</p>
+                </div>
+            </div>
+            
+            <div>
+                <img src=".//assets/hero-leaf2.png" alt="">
+            </div>
+        </section>
+    </header>
+    <main class="bg-[#f0fdf4]">
+        
+       
 
     </main>
 
-    <!-- Add Js File -->
 </body>
 
 </html>
+<!-- Add Js File -->

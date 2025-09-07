@@ -9,9 +9,15 @@
     <!-- Daisy Ui and Tailwind Css---:CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
-<body class="poppins-thin">
+<body class="inter-font">
 
     <header>
         <!-- fixed w-full -->
@@ -49,7 +55,7 @@
             </div>
         </nav>
         <!-- Banner Sections -->
-         <section class="grid grid-cols-3 bg-[#cff0dc] gap-10">
+        <section class="grid grid-cols-3 bg-[#cff0dc] gap-10">
             <div>
                 <img src="./assets/hero-leaf1.png" alt="">
             </div>
@@ -57,20 +63,41 @@
             <div class="text-center flex justify-center items-center">
                 <div class="justify-center items-center space-y-5 ">
                     <h1 class="text-5xl font-semibold ">Plant a Tree, Grow a Future</h1>
-                    <p class="text-[#1f2937] text-[18px]">Join our mission to plant 1 million trees and make the Earth greener for future
+                    <p class="text-[#1f2937] text-[18px]">Join our mission to plant 1 million trees and make the Earth
+                        greener for future
                         generations.</p>
-                        <p class=" px-3 py-2 w-[150px] mx-auto   rounded-full bg-yellow-400 text-[#15803d] font-semibold">Get Imvolved</p>
+                    <p class=" px-3 py-2 w-[150px] mx-auto   rounded-full bg-yellow-400 text-[#15803d] font-semibold">
+                        Get Imvolved</p>
                 </div>
             </div>
-            
+
             <div>
                 <img src=".//assets/hero-leaf2.png" alt="">
             </div>
         </section>
     </header>
     <main class="bg-[#f0fdf4]">
-        
-       
+
+     <!-- About the Campaign -->
+        <section class=" w-7/12 mx-auto py-10">
+            <h2 class="text-center mb-10 text-4xl font-semibold">About the Campaign</h2>
+            <div class="flex flex-col md:flex-row gap-10">
+                <img class="w-[500px]" src="./assets/about.png" alt="">
+                <div class="flex justify-center items-center">
+                    <div>
+                        <p class="text-[#2c394c]">Green Earth is a global tree plantation initiative dedicated to
+                            fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By
+                            joining our campaign, you help restore forests, create habitats for wildlife, and combat
+                            global warming.</p>
+                        <ul class="text-[#2c394c] mt-5">
+                            <li>Restoration of natural habitats</li>
+                            <li>Improvement of air quality</li>
+                            <li>Support for local communities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </main>
 

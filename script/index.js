@@ -51,16 +51,16 @@ const cardCointener = (allImg) => {
                  <div class="border border-gray-300 rounded-md rounded-t-lg flex flex-col h-full ">
                         <div class="bg-white  rounded-md rounded-t-lg shadow-md flex flex-col flex-grow ">
                             <img class="w-full h-[420px] rounded-t-lg object-cover" src="${dates.image}" alt="">
-                           <div class="p-4 flex flex-col flex-grow">
-                             <h2 onclick="myModalApi('${dates.id}')" id="${dates.id}" class="text-xl font-bold  cursor-pointer text-gray-700">${dates.name}</h2>
-                            <p class="font-medium  flex-grow">${dates.description}</p>
+                            <div class="p-4 flex flex-col flex-grow">
+                                 <h2 onclick="myModalApi('${dates.id}')" id="${dates.id}" class="text-xl  font-bold  cursor-pointer text-gray-700">${dates.name}</h2>
+                                 <p class="font-medium  flex-grow">${dates.description}</p>
                              <div class="flex justify-between items-center ">
-                                <button class="btn rounded-full text-green-600 bg-[#DCFCE7] text-[19px">Fruit Tree</button>
-                                 <h2 class="font-bold"><span class="text-1xl font-extrabold">৳</span> <span>${dates.price}</span></h2>
+                                  <button class="btn rounded-full text-green-600 bg-[#DCFCE7] text-[19px">Fruit Tree</button>
+                                   <h2 class="font-bold"><span class="text-1xl font-extrabold">৳</span> <span>${dates.price}</span></h2>
                              </div>
-                             <button id="addNow" class="mt-2 btn w-full  bg-[#15803d] rounded-full text-white text-xl font-medium addCardBtns">Add To Card</button>
-                        </div>
+                                 <button id="addNow" class="mt-2 btn w-full  bg-[#15803d] rounded-full text-white text-xl font-medium addCardBtns">Add To Card</button>
                            </div>
+                        </div>
                    </div>
     `;
     cointnarsCard.append(cardes);
@@ -117,7 +117,7 @@ mainCointnar.addEventListener("click", (e) => {
                 <h2 class="text-xl font-medium">${idName}</h2>
                 <p class="mt-2 font-medium"><span class="text-1xl font-extrabold">৳${idPrice}</span>
               </div>
-            <p id="clearBtn" class="">❌</p>
+            <div id="clearBtn" class="text-2xl"><i class="ri-close-line"></i></div>
         </div>
     `;
     divPush.appendChild(creatPushDiv);

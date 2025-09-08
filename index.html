@@ -32,21 +32,21 @@
                                     d="M4 6h16M4 12h8m-8 6h16" />
                             </svg>
                         </div>
-                        <ul tabindex="0"
+                        <div tabindex="0"
                             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><a>About</a></li>
-                            <li><a>Gallery</a> </li>
-                            <li><a>Plant a Tree</a></li>
-                        </ul>
+                            <p><a>About</a></p>
+                            <p><a>Gallery</a> </p>
+                            <p><a>Plant a Tree</a></p>
+                        </div>
                     </div>
                     <a class="  text-xl text-white font-semibold">Green Earth</a>
                 </div>
                 <div class="navbar-center hidden lg:flex">
-                    <ul class="gap-7 text-white font-semibold menu-horizontal px-1">
-                        <li class="cursor-pointer"><a>About</a></li>
-                        <li class="cursor-pointer"><a>Gallery</a> </li>
-                        <li class="cursor-pointer"><a>Plant a Tree</a></li>
-                    </ul>
+                    <div class="gap-7 text-white font-semibold menu-horizontal px-1">
+                        <p class="cursor-pointer"><a>About</a></p>
+                        <p class="cursor-pointer"><a>Gallery</a> </p>
+                        <p class="cursor-pointer"><a>Plant a Tree</a></p>
+                    </div>
                 </div>
                 <div class="navbar-end">
                     <p class=" px-4 py-2 rounded-full bg-yellow-400 text-[#15803d] font-semibold">Plant a
@@ -80,39 +80,21 @@
         <!-- Js API Part -->
         <section class=" bg-[#f5fff6] ">
             <h2 class="text-4xl font-semibold text-center py-10">Choose Your Trees</h2>
-              <div class=" md:w-12/14 mx-auto  grid md:grid-cols-14 gap-8 ">
+              <div class=" md:w-12/14 mx-auto  grid md:grid-cols-14 gap-4 ">
 
                 <!-- FIrst Div   -->
-                <div  class="col-span-2 mt-5">
+                <div  class="col-span-2 mt-5 ">
                     <h2 class="text-2xl font-semibold">Categories</h2>
                      <div id="titleCointnar">
-
+                          <!-- <li id="main" class="list-none py-2 px-2"><a>All Tree</a></li> -->
                      </div>
                 </div>
 
 
                 <!-- second div -->
-                <div id="card-cointener" class="md:col-span-9 mt-5 p-2  grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="border-1 p-2">
-                         <img src="./assets/hero-leaf1.png" alt="">
-                    </div>
-                    <div class="border-1 p-2">
-                         <img src="./assets/hero-leaf1.png" alt="">
-                    </div>
-                    <div class="border-1 p-2">
-                         <img src="./assets/hero-leaf1.png" alt="">
-                    </div>
-                    <div class="border-1 p-2">
-                         <img src="./assets/hero-leaf1.png" alt="">
-                    </div>
-                    <div class="border-1 p-2">
-                         <img src="./assets/hero-leaf1.png" alt="">
-                    </div>
-                    <div class="border-1 p-2">
-                         <img src="./assets/hero-leaf1.png" alt="">
-                    </div>
-
-
+                <div id="cardCointener" class="md:col-span-9 mt-5   grid grid-cols-1 md:grid-cols-3 gap-4">
+                  
+                   
                 </div>
 
                 <!-- Third Div -->
@@ -147,11 +129,11 @@
                             fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By
                             joining our campaign, you help restore forests, create habitats for wildlife, and combat
                             global warming.</p>
-                        <ul class="text-[#2c394c] mt-3 font-medium px-3">
-                            <li>1.Restoration of natural habitats</li>
-                            <li>2.Improvement of air quality</li>
-                            <li>3.Support for local communities</li>
-                        </ul>
+                        <div class="text-[#2c394c] mt-3 font-medium px-3">
+                            <p>1.Restoration of natural habitats</p>
+                            <p>2.Improvement of air quality</p>
+                            <p>3.Support for local communities</p>
+                        </div>
                     </div>
                 </div>
             </div>

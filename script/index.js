@@ -55,12 +55,12 @@ const cardCointener = (allImg) => {
                         <div class="bg-[#FFFFFF]  rounded-md rounded-t-lg shadow-md">
                             <img class="w-full h-[270px] rounded-t-lg cover" src="${dates.image}" alt="">
                            <div class="p-4">
-                             <h2 id="modalClick" class="text-xl font-bold mt-3">${dates.name}</h2>
+                             <h2 id="modalClick" class="text-xl font-bold py-4">${dates.name}</h2>
                             <p class="font-medium">${dates.description}</p>
 
                              <div class="flex justify-between items-center mt-3">
-                                <button class="btn">Fruit Tree</button>
-                                 <h2 class="font-bold">$ ${dates.price}</h2>
+                                <button class="btn rounded-full text-green-600 bg-[#DCFCE7] text-[19px">Fruit Tree</button>
+                                 <h2 class="font-bold"><span class="text-1xl font-extrabold">৳</span> ${dates.price}</h2>
                              </div>
                              <button class="btn w-full mt-6 bg-[#15803d] rounded-full text-white text-xl font-medium">Add To Card</button>
                         </div>

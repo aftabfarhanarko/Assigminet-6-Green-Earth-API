@@ -1,6 +1,5 @@
 const catagori = () => {
-  const url = "https://openapi.programming-hero.com/api/categories";
-  fetch(url)
+  fetch("https://openapi.programming-hero.com/api/categories")
     .then((res) => res.json())
     .then((data) => addCarrigoy(data.categories));
 };
@@ -48,14 +47,14 @@ const cardCointener = (allImg) => {
   const cointnarsCard = document.getElementById("cardCointener");
   cointnarsCard.innerHTML = "";
   allImg.forEach((dates) => {
-    modalCointnar(dates.id);
+    // console.log(dates);
     const cardes = document.createElement("div");
     cardes.innerHTML = `
                  <div class="border-1 border-gray-300 rounded-md rounded-t-lg ">
                         <div class="bg-[#FFFFFF]  rounded-md rounded-t-lg shadow-md">
                             <img class="w-full h-[270px] rounded-t-lg cover" src="${dates.image}" alt="">
                            <div class="p-4">
-                             <h2 id="modalClick" class="text-xl font-bold py-4">${dates.name}</h2>
+                             <h2 onclick="myModalApi('${dates.id}')" id="${dates.id}" class="text-xl font-bold py-4 cursor-pointer">${dates.name}</h2>
                             <p class="font-medium">${dates.description}</p>
 
                              <div class="flex justify-between items-center mt-3">
@@ -69,19 +68,49 @@ const cardCointener = (allImg) => {
     `;
     cointnarsCard.append(cardes);
   });
-  // modalCointnar(allImg.id);
-  sideBar(allImg);
+};
+
+const myModalApi = (id) => {
+  my_modal_3.showModal();
+  const myUrl = `https://openapi.programming-hero.com/api/plant/${id}`;
+  fetch(myUrl)
+    .then((res) => res.json())
+    .then((ubdate) => modal(ubdate.plants));
+};
+
+const modal = (data) => {
+  const modalCointadd = document.getElementById("addDetlise");
+  modalCointadd.innerHTML = "";
+  const creats = document.createElement("div");
+  creats.innerHTML = `
+  <div class="space-y-5">
+   <form method="dialog">
+       <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    </form>
+   <h2 class="text-xl font-semibold">${data.name}</h2>
+    <img class="h-[250px] w-full cover" src="${data.image}">
+     <div>
+        <h2> <span class="text-xl font-semibold"> Category :</span>${data.category}</h2>
+        <h4><span class="text-xl font-semibold"> Price : ৳</span>${data.price}</h4>
+        <p><span class="text-xl font-semibold"> Description :</span>${data.description}</p>
+     </div>
+  </div>
+     
+  `;
+  modalCointadd.appendChild(creats);
 };
 
 const mainCointnar = document.getElementById("cardCointener");
 mainCointnar.addEventListener("click", (e) => {
   if (e.target.innerText === "Add To Card") {
     const idName = e.target.parentNode.children[0].innerText;
-    const idPrice = e.target.parentNode.children[2].children[1].children[1].innerText;
-   
-    const total = document.getElementById("clearBtn");
-    console.log(total);
+    const idPrice =
+      e.target.parentNode.children[2].children[1].children[1].innerText;
 
+    // // const price = 0;
+    // const total = document.getElementById("totalCOunt");
+    // idPrice += idPrice;
+    // total.innerText = idPrice;
 
     const divPush = document.getElementById("newaddesDiv");
     const creatPushDiv = document.createElement("div");
@@ -91,20 +120,11 @@ mainCointnar.addEventListener("click", (e) => {
                 <h2 class="text-xl font-medium">${idName}</h2>
                 <p class="mt-2 font-medium"><span class="text-1xl font-extrabold">৳${idPrice}</span>
               </div>
-            <p id="clearBtn" class="">❌ </p>
+            <p id="clearBtn" class="">❌</p>
         </div>
     `;
     divPush.appendChild(creatPushDiv);
   }
 });
-
-
-const modalCointnar = (modal) => {
-  const cointModalText = document.getElementById("modalClick");
-
-  const modalUrl = `https://openapi.programming-hero.com/api/plant/${modal}`;
-  fetch(modalUrl).then((res) => res.json());
-  // .then(data => console.log(data));
-};
 
 catagori();

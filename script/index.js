@@ -1,8 +1,19 @@
+let priceTotal = 0;
 const catagori = () => {
   fetch("https://openapi.programming-hero.com/api/categories")
     .then((res) => res.json())
     .then((data) => addCarrigoy(data.categories));
 };
+
+const spiners  = (str) => {
+  if(str == true){
+    document.getElementById("spinerLoding").classList.remove("hidden");
+    document.getElementById("mainCointner").classList.add("hidden");
+  }else{
+    document.getElementById("mainCointner").classList.remove("hidden");
+    document.getElementById("spinerLoding").classList.add("hidden");
+  }
+}
 
 const addCarrigoy = (cata) => {
   const cointnars = document.getElementById("titleCointnar");
@@ -36,6 +47,7 @@ const addCarrigoy = (cata) => {
 };
 
 const cardsApi = (id) => {
+  spiners(true);
   const url = ` https://openapi.programming-hero.com/api/category/${id}`;
   fetch(url)
     .then((res) => res.json())
@@ -64,6 +76,7 @@ const cardCointener = (allImg) => {
                    </div>
     `;
     cointnarsCard.append(cardes);
+    spiners(false);
   });
 };
 
@@ -98,27 +111,39 @@ const modal = (data) => {
 };
 
 const mainCointnar = document.getElementById("cardCointener");
+
 mainCointnar.addEventListener("click", (e) => {
   if (e.target.innerText === "Add To Card") {
     const idName = e.target.parentNode.children[0].innerText;
+
     const idPrice =
       e.target.parentNode.children[2].children[1].children[1].innerText;
+    const priceNumber = parseInt(idPrice);
+    priceTotal = priceTotal + priceNumber;
+    console.log(priceTotal);
+    let totals = document.getElementById("totalCOunt");
+    totals.innerText = `Total : ৳${priceTotal}`;
 
-    // // const price = 0;
-    // const total = document.getElementById("totalCOunt");
-    // idPrice += idPrice;
-    // total.innerText = idPrice;
+    // const clear = document.getElementById("clearBtn");
+    // clear.addEventListener("click", (e) => {
+    //   let pria =
+    //     e.target.parentNode.parentNode.children[0].children[1].children[1]
+    //       .innerText;
+    //   let priceConvart = parseInt(pria);
+    //   console.log(priceConvart);
+    // });
 
     const divPush = document.getElementById("newaddesDiv");
     const creatPushDiv = document.createElement("div");
     creatPushDiv.innerHTML = `
-        <div  class="border-1 flex justify-between items-center py-5 px-3 rounded-md mt-3 bg-[#F5FFF6] border-gray-200">
+        <div  class="border-1 flex justify-between items-center py-2 px-2 rounded-md mt-3 bg-[#F5FFF6] border-gray-200">
              <div class="">
                 <h2 class="text-xl font-medium">${idName}</h2>
-                <p class="mt-2 font-medium"><span class="text-1xl font-extrabold">৳${idPrice}</span>
+                <p class="mt-2 font-medium"><span class="text-xl font-extrabold">৳</span class="text-xl font-extrabold"><span>${idPrice}</span> </p>
               </div>
             <div id="clearBtn" class="text-2xl"><i class="ri-close-line"></i></div>
         </div>
+        
     `;
     divPush.appendChild(creatPushDiv);
   }

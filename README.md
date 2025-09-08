@@ -1,35 +1,24 @@
-১) ন্যাভবার
+Create a README file to answer the following question-
+1) What is the difference between var, let, and const?
 
-ওয়েবসাইটের লোগো/নাম বামে থাকবে
+1-> Ans:
 
-মেনু আইটেম মাঝখানে থাকবে
 
-Plant a Tree বাটন ডানে থাকবে
+2) What is the difference between map(), forEach(), and filter()?
 
-২) ব্যানার
+2-> Ans:
 
-ব্যাকগ্রাউন্ড ইমেজ
 
-টাইটেল ও সাব-টাইটেল
+3) What are arrow functions in ES6?
 
-মাঝখানে একটি বাটন
+3-> Ans:
 
-৩) আমাদের ক্যাম্পেইন (About Campaign)
+4) How does destructuring assignment work in ES6?
 
-সেকশন শিরোনাম
+4-> Ans:
 
-বামে ছবি, ডানে টেক্সট
 
-৪) আমাদের অর্জন (Our Impact)
+5) Explain template literals in ES6. How are they different from string concatenation?
 
-৩টি কার্ডে ক্যাম্পেইনের পরিসংখ্যান
 
-৫) আজই গাছ লাগান (Plant a Tree Today)
-
-ফর্ম: নাম, ইমেইল, কতগুলো গাছ লাগাতে চান
-
-ফুটার: কপিরাইট ইনফো
-
-৬) রেসপন্সিভনেস
-
-ওয়েবসাইট মোবাইল রেসপন্সিভ হতে হবে
+5-> Ans:

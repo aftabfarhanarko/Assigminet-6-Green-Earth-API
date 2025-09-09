@@ -33,7 +33,7 @@ const addCarrigoy = (cata) => {
   cata.forEach((element) => {
     const adds = document.createElement("ul");
     adds.innerHTML = `
-         <ul class="mt-3 font-medium hover:bg-[#15803D] hover:text-white rounded-md  ">
+         <ul class="mt-3 font-medium hover:bg-[#15803D] hover:text-white rounded-md text-center md:text-left ">
             <li id="${element.id}" class="list-none py-2 px-5 cursor-pointer
             "><a>${element.category_name}</a></li>
          </ul>

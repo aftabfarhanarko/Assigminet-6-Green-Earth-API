@@ -123,7 +123,6 @@ const modal = (data) => {
 };
 
 const mainCointnar = document.getElementById("cardCointener");
-
 mainCointnar.addEventListener("click", (e) => {
   if (e.target.innerText === "Add To Card") {
     const idName = e.target.parentNode.children[0].innerText;
@@ -150,8 +149,8 @@ mainCointnar.addEventListener("click", (e) => {
     creatPushDiv.innerHTML = `
         <div  class="border-1 flex justify-between items-center py-2 px-2 rounded-md mt-3 bg-[#F5FFF6] border-gray-200">
              <div class="">
-                <h2 class="text-xl font-medium">${idName}</h2>
-                <p class="mt-2 font-medium"><span class="text-xl font-extrabold">৳</span class="text-xl font-extrabold"><span>${idPrice}</span> </p>
+                <h2 class="text-[17px] md:text-xl font-medium">${idName}</h2>
+                <p class="mt-2 font-medium"><span class="text-xl font-extrabold">৳</span class="text-[17px] md:text-xl  font-extrabold"><span>${idPrice}</span> </p>
               </div>
             <div id="clearBtn" class="text-2xl"><i class="ri-close-line"></i></div>
         </div>

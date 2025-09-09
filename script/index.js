@@ -1,4 +1,3 @@
-
 const catagori = () => {
   fetch("https://openapi.programming-hero.com/api/categories")
     .then((res) => res.json())
@@ -131,22 +130,26 @@ const mainCointnar = document.getElementById("cardCointener");
 const divPush = document.getElementById("newaddesDiv");
 const totals = document.getElementById("totalCOunt");
 // add to card event
-mainCointnar.addEventListener("click" ,(e) => {
-  if(e.target.innerText === "Add To Card"){
+mainCointnar.addEventListener("click", (e) => {
+  if (e.target.innerText === "Add To Card") {
     const idName = e.target.parentNode.children[0].innerText;
-    const idPrice = e.target.parentNode.children[2].children[1].children[1].innerText;
+    const idPrice =
+      e.target.parentNode.children[2].children[1].children[1].innerText;
 
     const priceConvard = parseInt(idPrice);
     priceTotal += priceConvard;
-    totals.innerText =`Total :${priceTotal}`;
-     const creatPushDiv = document.createElement("div");
+    totals.innerText = `Total : ৳${priceTotal}`;
+    const creatPushDiv = document.createElement("div");
     creatPushDiv.innerHTML = `
         <div id="events"  class="border-1 flex justify-between items-center py-2 px-2 rounded-md mt-3 bg-[#F5FFF6] border-gray-200">
              <div class="">
                 <h2 class="text-[17px] md:text-xl font-medium">${idName}</h2>
-                <p class="mt-2 font-medium"><span class="text-xl font-extrabold">৳</span class="text-[17px] md:text-xl  font-extrabold "><span class="price-value">${idPrice}</span> </p>
+                <p class="mt-2 font-medium text-[17px] md:text-xl">
+                <span class=" font-extrabold">৳</span>
+                
+                 <span class="price-value ">${idPrice}</span> </p>
               </div>
-            <p  class="text-1xl clearBtn">❌</p>
+            <p  class="text-1xl clearBtn cursor-pointer">❌</p>
         </div>
         
     `;
@@ -155,7 +158,7 @@ mainCointnar.addEventListener("click" ,(e) => {
 });
 
 divPush.addEventListener("click", (e) => {
-  if(e.target.classList.contains("clearBtn")){
+  if (e.target.classList.contains("clearBtn")) {
     const cardDiv = e.target.parentNode;
     const priceText = cardDiv.querySelector(".price-value").innerText;
     const pricInner = parseInt(priceText);
@@ -166,8 +169,7 @@ divPush.addEventListener("click", (e) => {
 
     cardDiv.remove();
   }
-})
-
+});
 
 // All Tree Button
 document.getElementById("allTreeBtn").addEventListener("click", (e) => {

@@ -1,9 +1,21 @@
 let priceTotal = 0;
+
 const catagori = () => {
   fetch("https://openapi.programming-hero.com/api/categories")
     .then((res) => res.json())
     .then((data) => addCarrigoy(data.categories));
 };
+
+const allPlantsApi = () => {
+  spiners(true);
+  fetch("https://openapi.programming-hero.com/api/plants")
+  .then(res => res.json())
+  .then(data => {
+    cardCointener(data.plants) 
+    spiners(false)
+  })
+  .catch(err => console.log(err));
+}
 
 const spiners  = (str) => {
   if(str == true){
@@ -31,16 +43,11 @@ const addCarrigoy = (cata) => {
   cointnars.addEventListener("click", (e) => {
     const alls = document.querySelectorAll("li");
     alls.forEach((puts) => {
-      puts.classList.remove("bg-[#15803D]");
-      puts.classList.remove("rounded-md");
-      puts.classList.remove("text-white");
+      puts.classList.remove("bg-[#15803D]","rounded-md","text-white");
     });
 
     if (e.target.localName === "li") {
-      e.target.classList.add("bg-[#15803D]");
-      e.target.classList.add("text-white");
-      e.target.classList.add("rounded-md");
-      e.target.classList.add("w-full");
+      e.target.classList.add("bg-[#15803D]","text-white","rounded-md","w-full");
       cardsApi(e.target.id);
     }
   });
@@ -51,7 +58,11 @@ const cardsApi = (id) => {
   const url = ` https://openapi.programming-hero.com/api/category/${id}`;
   fetch(url)
     .then((res) => res.json())
-    .then((data) => cardCointener(data.plants));
+    .then((data) =>{
+       cardCointener(data.plants)
+       spiners(false)
+      })
+      .catch(err => console.log(err));
 };
 
 const cardCointener = (allImg) => {
@@ -76,8 +87,8 @@ const cardCointener = (allImg) => {
                    </div>
     `;
     cointnarsCard.append(cardes);
-    spiners(false);
   });
+  spiners(false);
 };
 
 const myModalApi = (id) => {
@@ -85,7 +96,8 @@ const myModalApi = (id) => {
   const myUrl = `https://openapi.programming-hero.com/api/plant/${id}`;
   fetch(myUrl)
     .then((res) => res.json())
-    .then((ubdate) => modal(ubdate.plants));
+    .then((ubdate) => modal(ubdate.plants))
+    .catch(err => console.log(err));
 };
 
 const modal = (data) => {
@@ -149,4 +161,16 @@ mainCointnar.addEventListener("click", (e) => {
   }
 });
 
+// All Tree Button
+document.getElementById("allTreeBtn").addEventListener("click", (e) => {
+   const alls = document.querySelectorAll("li");
+    alls.forEach((puts) => {
+        puts.classList.remove("bg-[#15803D]","rounded-md","text-white");
+    });
+     e.target.classList.add("bg-[#15803D]","text-white","rounded-md","w-full");
+  allPlantsApi();
+})
+
+
 catagori();
+allPlantsApi();

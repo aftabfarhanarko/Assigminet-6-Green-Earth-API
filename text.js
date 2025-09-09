@@ -1,40 +1,4 @@
-Create a README file to answer the following question-
-1) What is the difference between var, let, and const?
-
-1-> Ans:
-
-
-2) What is the difference between map(), forEach(), and filter()?
-
-2-> Ans:
-
-
-3) What are arrow functions in ES6?
-
-3-> Ans:
-
-4) How does destructuring assignment work in ES6?
-
-4-> Ans:
-
-
-5) Explain template literals in ES6. How are they different from string concatenation?
-
-
-5-> Ans:
-
-
-
-
-   if(e.target){
-      
-    }
-
-
-
-<!-- ---------------------------------------- -->
- 
-    mainCointnar.addEventListener("click", (e) => {
+ mainCointnar.addEventListener("click", (e) => {
   if (e.target.innerText === "Add To Card") {
    const idName = e.target.parentNode.children[0].innerText;
 
@@ -46,20 +10,7 @@ Create a README file to answer the following question-
     console.log(priceTotal);
     let totals = document.getElementById("totalCOunt");
     totals.innerText = `Total : ৳${priceTotal}`;
-
-    // clearBtn
-  // const totalSubtions = document.getElementById("events");
-  // totalSubtions.addEventListener("click", (e) => {
-  //   // let pria = e.target.parentNode.parentNode.children[0].children[1].children[1].innerText;
-  //   // let priceConvart = parseInt(pria);
-  //   // console.log(priceConvart);
-
-  //   console.log("Click This");
-
-  //   const pricea = e.target.parentNode;
-  //   console.log(pricea);
-  // });
-
+    
     const divPush = document.getElementById("newaddesDiv");
     const creatPushDiv = document.createElement("div");
     creatPushDiv.innerHTML = `

@@ -1,4 +1,3 @@
-let priceTotal = 0;
 
 const catagori = () => {
   fetch("https://openapi.programming-hero.com/api/categories")
@@ -9,23 +8,23 @@ const catagori = () => {
 const allPlantsApi = () => {
   spiners(true);
   fetch("https://openapi.programming-hero.com/api/plants")
-  .then(res => res.json())
-  .then(data => {
-    cardCointener(data.plants) 
-    spiners(false)
-  })
-  .catch(err => console.log(err));
-}
+    .then((res) => res.json())
+    .then((data) => {
+      cardCointener(data.plants);
+      spiners(false);
+    })
+    .catch((err) => console.log(err));
+};
 
-const spiners  = (str) => {
-  if(str == true){
+const spiners = (str) => {
+  if (str == true) {
     document.getElementById("spinerLoding").classList.remove("hidden");
     document.getElementById("mainCointner").classList.add("hidden");
-  }else{
+  } else {
     document.getElementById("mainCointner").classList.remove("hidden");
     document.getElementById("spinerLoding").classList.add("hidden");
   }
-}
+};
 
 const addCarrigoy = (cata) => {
   const cointnars = document.getElementById("titleCointnar");
@@ -43,11 +42,16 @@ const addCarrigoy = (cata) => {
   cointnars.addEventListener("click", (e) => {
     const alls = document.querySelectorAll("li");
     alls.forEach((puts) => {
-      puts.classList.remove("bg-[#15803D]","rounded-md","text-white");
+      puts.classList.remove("bg-[#15803D]", "rounded-md", "text-white");
     });
 
     if (e.target.localName === "li") {
-      e.target.classList.add("bg-[#15803D]","text-white","rounded-md","w-full");
+      e.target.classList.add(
+        "bg-[#15803D]",
+        "text-white",
+        "rounded-md",
+        "w-full"
+      );
       cardsApi(e.target.id);
     }
   });
@@ -58,11 +62,11 @@ const cardsApi = (id) => {
   const url = ` https://openapi.programming-hero.com/api/category/${id}`;
   fetch(url)
     .then((res) => res.json())
-    .then((data) =>{
-       cardCointener(data.plants)
-       spiners(false)
-      })
-      .catch(err => console.log(err));
+    .then((data) => {
+      cardCointener(data.plants);
+      spiners(false);
+    })
+    .catch((err) => console.log(err));
 };
 
 const cardCointener = (allImg) => {
@@ -97,7 +101,7 @@ const myModalApi = (id) => {
   fetch(myUrl)
     .then((res) => res.json())
     .then((ubdate) => modal(ubdate.plants))
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
 
 const modal = (data) => {
@@ -122,37 +126,27 @@ const modal = (data) => {
   modalCointadd.appendChild(creats);
 };
 
+let priceTotal = 0;
 const mainCointnar = document.getElementById("cardCointener");
-mainCointnar.addEventListener("click", (e) => {
-  if (e.target.innerText === "Add To Card") {
+const divPush = document.getElementById("newaddesDiv");
+const totals = document.getElementById("totalCOunt");
+// add to card event
+mainCointnar.addEventListener("click" ,(e) => {
+  if(e.target.innerText === "Add To Card"){
     const idName = e.target.parentNode.children[0].innerText;
+    const idPrice = e.target.parentNode.children[2].children[1].children[1].innerText;
 
-    const idPrice =
-      e.target.parentNode.children[2].children[1].children[1].innerText;
-    const priceNumber = parseInt(idPrice);
-    priceTotal = priceTotal + priceNumber;
-    console.log(priceTotal);
-    let totals = document.getElementById("totalCOunt");
-    totals.innerText = `Total : ৳${priceTotal}`;
-
-    // const clear = document.getElementById("clearBtn");
-    // clear.addEventListener("click", (e) => {
-    //   let pria =
-    //     e.target.parentNode.parentNode.children[0].children[1].children[1]
-    //       .innerText;
-    //   let priceConvart = parseInt(pria);
-    //   console.log(priceConvart);
-    // });
-
-    const divPush = document.getElementById("newaddesDiv");
-    const creatPushDiv = document.createElement("div");
+    const priceConvard = parseInt(idPrice);
+    priceTotal += priceConvard;
+    totals.innerText =`Total :${priceTotal}`;
+     const creatPushDiv = document.createElement("div");
     creatPushDiv.innerHTML = `
-        <div  class="border-1 flex justify-between items-center py-2 px-2 rounded-md mt-3 bg-[#F5FFF6] border-gray-200">
+        <div id="events"  class="border-1 flex justify-between items-center py-2 px-2 rounded-md mt-3 bg-[#F5FFF6] border-gray-200">
              <div class="">
                 <h2 class="text-[17px] md:text-xl font-medium">${idName}</h2>
-                <p class="mt-2 font-medium"><span class="text-xl font-extrabold">৳</span class="text-[17px] md:text-xl  font-extrabold"><span>${idPrice}</span> </p>
+                <p class="mt-2 font-medium"><span class="text-xl font-extrabold">৳</span class="text-[17px] md:text-xl  font-extrabold "><span class="price-value">${idPrice}</span> </p>
               </div>
-            <div id="clearBtn" class="text-2xl"><i class="ri-close-line"></i></div>
+            <p  class="text-1xl clearBtn">❌</p>
         </div>
         
     `;
@@ -160,16 +154,30 @@ mainCointnar.addEventListener("click", (e) => {
   }
 });
 
-// All Tree Button
-document.getElementById("allTreeBtn").addEventListener("click", (e) => {
-   const alls = document.querySelectorAll("li");
-    alls.forEach((puts) => {
-        puts.classList.remove("bg-[#15803D]","rounded-md","text-white");
-    });
-     e.target.classList.add("bg-[#15803D]","text-white","rounded-md","w-full");
-  allPlantsApi();
+divPush.addEventListener("click", (e) => {
+  if(e.target.classList.contains("clearBtn")){
+    const cardDiv = e.target.parentNode;
+    const priceText = cardDiv.querySelector(".price-value").innerText;
+    const pricInner = parseInt(priceText);
+
+    // (-) total
+    priceTotal -= pricInner;
+    totals.innerText = `Total :৳${priceTotal}`;
+
+    cardDiv.remove();
+  }
 })
 
+
+// All Tree Button
+document.getElementById("allTreeBtn").addEventListener("click", (e) => {
+  const alls = document.querySelectorAll("li");
+  alls.forEach((puts) => {
+    puts.classList.remove("bg-[#15803D]", "rounded-md", "text-white");
+  });
+  e.target.classList.add("bg-[#15803D]", "text-white", "rounded-md", "w-full");
+  allPlantsApi();
+});
 
 catagori();
 allPlantsApi();
